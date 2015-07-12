@@ -18,10 +18,10 @@ def index():
 @app.route('/charge', methods=['POST'])
 def charge():
     # Amount in cents
-    amount = 500
+    amount = 6000
 
     customer = stripe.Customer.create(
-        email='customer@example.com',
+        email=request.form['stripeEmail'],
         card=request.form['stripeToken']
     )
 
@@ -29,7 +29,7 @@ def charge():
         customer=customer.id,
         amount=amount,
         currency='usd',
-        description='Flask Charge'
+        description='Tattoo Depost Non-Refundable'
     )
 
     return render_template('charge.html', amount=amount)
