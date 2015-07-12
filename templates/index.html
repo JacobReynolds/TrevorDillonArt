@@ -1,0 +1,64 @@
+<!--Created by Jake Reynolds
+jakereynolds.co-->
+<html>
+
+<head>
+    <title>Trevor Dillon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<script type="text/javascript">
+    $.ajax({
+        type: "GET",
+        dataType: "jsonp",
+        cache: false,
+        url: "https://api.instagram.com/v1/users/self/media/recent?access_token=273782068.d840ea5.4b85afd4d1f44f7fa70c7bcdf23fae02",
+        success: function (data) {
+            for (var i = 0; i < 20; i++) {
+                $("#instaImageContainer").append("<a target='_blank' href='" + data.data[i].link + "'><img id=\"instaImage\"src='" + data.data[i].images.low_resolution.url + "'></img></a>");
+            }
+        }
+    });
+</script>
+
+<body>
+    <section id="header">
+        <h1>Trevor Aarsvold</h1>
+        <!--<h3>artist</h3>-->
+        <h3>Minneapolis, Mn</h3>
+        <div id="instagram">
+            <div id="instaImageContainer">
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="mainContent">
+        <h2>Appointments</h2>
+        <p>Gave a dope sloth tattoo and I'm a loser that enjoys drawing on people</p>
+        <p>Basic appointment info, deposit amount, and rules go here.</p>
+    </section>
+    <section id="information">
+        <h2>Information</h2>
+        <form class="stripeForm" action="/charge" method="post">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="Tattoo Deposit" data-amount="6000"></script>
+        </form>
+        <p>Phone: 952-358-0210</p>
+    </section>
+    <footer>
+        <div id="socialMediaLinks">
+            <a href="https://www.instagram.com/trevordillonart" title="View my instagram" target="_blank"><img id="socialMediaBadge" src="{{ url_for('static', filename='images/Instagram_Icon_Large.png') }}" />
+            </a>
+            <a href="https://www.facebook.com/trevor.aarsvold?fref=ts" title="Check out my facebook" target="_blank"><img id="socialMediaBadge" src="{{ url_for('static', filename='images/Facebook_Icon.png') }}" />
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
