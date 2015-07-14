@@ -34,19 +34,7 @@ section {
     box-shadow: inset 0px -26px 18px -10px rgba(0, 0, 0, 0.75);
 }
 
-.addTopShadow {
-    -webkit-box-shadow: inset 0px 26px 18px -10px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 26px 18px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 26px 18px -10px rgba(0, 0, 0, 0.75);
-}
-
 .removeBottomShadow {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-
-.removeTopShadow {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

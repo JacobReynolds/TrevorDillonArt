@@ -12,20 +12,6 @@ jakereynolds.co-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 
-<script type="text/javascript">
-    $.ajax({
-        type: "GET",
-        dataType: "jsonp",
-        cache: false,
-        url: "https://api.instagram.com/v1/users/self/media/recent?access_token=273782068.d840ea5.4b85afd4d1f44f7fa70c7bcdf23fae02",
-        success: function (data) {
-            for (var i = 0; i < 20; i++) {
-                $("#instaImageContainer").append("<a target='_blank' href='" + data.data[i].link + "'><img id=\"instaImage\"src='" + data.data[i].images.low_resolution.url + "'></img></a>");
-            }
-        }
-    });
-</script>
-
 <body>
     <section id="header">
         <h1>Trevor Aarsvold</h1>
@@ -33,12 +19,9 @@ jakereynolds.co-->
         <h3>Minneapolis, Mn</h3>
         <div id="instagram">
             <div id="instaImageContainer">
-
             </div>
         </div>
-
     </section>
-
     <section id="mainContent">
         <h2>Appointments</h2>
         <p>Gave a dope sloth tattoo and I'm a loser that enjoys drawing on people</p>
@@ -47,7 +30,7 @@ jakereynolds.co-->
     <section id="information">
         <h2>Information</h2>
         <form class="stripeForm" action="/charge" method="post">
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="Tattoo Deposit Non-Refundable" data-amount="6000"></script>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="Deposit Non-Refundable" data-amount="6200"></script>
         </form>
         <p>Phone: 952-358-0210</p>
     </section>
@@ -59,6 +42,7 @@ jakereynolds.co-->
             </a>
         </div>
     </footer>
+    <script type='text/javascript' src='https://plasso.co/embed/v2/embed.js'></script>
 </body>
 
 </html>

@@ -29,7 +29,7 @@ def charge():
         customer=customer.id,
         amount=amount,
         currency='usd',
-        description='Tattoo Depost Non-Refundable'
+        description='Deposit Non-Refundable'
     )
 
     return render_template('charge.html', amount=amount)
