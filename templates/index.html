@@ -10,6 +10,7 @@ jakereynolds.co-->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 
 <body>
@@ -23,12 +24,18 @@ jakereynolds.co-->
         </div>
     </section>
     <section id="mainContent">
+        <h2>About me</h2>
+        <p>My name's Trevor Aarsvold, I'm a 20 year old tattoo artist working in Minneapolis, Mn.</p>
+        <p>I love working with traditional and new school tattoos.</p>
+    </section>
+    <section id="appointments">
         <h2>Appointments</h2>
-        <p>Gave a dope sloth tattoo and I'm a loser that enjoys drawing on people</p>
-        <p>Basic appointment info, deposit amount, and rules go here.</p>
+        <p>To schedule an appointment, please call me at (952)-358-0210. Drawings will be made once an appointment is scheduled.</p>
+        <p>To make a deposit please see below.</p>
     </section>
     <section id="information">
         <h2>Information</h2>
+        <p>Click below to make a deposit. Deposits are $60 with a $2 convenience fee. They can also be made in person.</p>
         <form class="stripeForm" action="/charge" method="post">
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="Deposit Non-Refundable" data-amount="6200"></script>
         </form>

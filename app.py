@@ -18,7 +18,7 @@ def index():
 @app.route('/charge', methods=['POST'])
 def charge():
     # Amount in cents
-    amount = 6000
+    amount = 6200
 
     customer = stripe.Customer.create(
         email=request.form['stripeEmail'],
