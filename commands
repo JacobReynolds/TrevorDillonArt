@@ -1,0 +1,6 @@
+To start locally, run this command
+PUBLISHABLE_KEY=XXXXXXXX SECRET_KEY=XXXXXXX foreman start
+
+To publish to heroku, run this command
+heroku config:set PUBLISHABLE_KEY=XXXXXXXX SECRET_KEY=XXXXXXX
+
