@@ -20,9 +20,9 @@ function loadInsta() {
 $(document).ready(function () {
     "use strict";
 /*
-    /*$("#header").animate({
-        scrollTop: 2000
-    }, 40000);*/
+    //$("#header").animate({
+    //    scrollTop: 2000
+    //}, 40000);
     $('#header').addClass('addBottomShadow');
     $('#header').scroll(function () {
 
