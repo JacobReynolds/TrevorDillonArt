@@ -19,6 +19,7 @@ function loadInsta() {
 
 $(document).ready(function () {
     "use strict";
+/*
     /*$("#header").animate({
         scrollTop: 2000
     }, 40000);*/
@@ -47,5 +48,7 @@ $(document).ready(function () {
         }
     });
     $(".stripe-button-el").html('<span>Make a deposit</span>');
+*/
     loadInsta();
+
 });

@@ -19,7 +19,7 @@ section {
     background-color: #FFD6A9;
     color: #0D83B2;
     font-family: 'Lobster', Georgia, Times, serif;
-    height: 450px;
+    height: auto;
     overflow-y: auto;
     align: center;
     margin: 0px;
